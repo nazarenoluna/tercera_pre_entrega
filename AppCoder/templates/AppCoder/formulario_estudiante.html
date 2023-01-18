@@ -1,9 +1,9 @@
 {% extends "AppCoder/base.html" %}
 
-{% block subtitulo %}Crear curso{% endblock subtitulo %}
+{% block subtitulo %}Formulario-Agregar Estudiante{% endblock subtitulo %}
 
 {% block contenido %}
-<form action="{% url 'crear_curso' %}" method="post">
+<form action="{% url 'agregar_estudiantes' %}" method="post">
   {% csrf_token %}
   {{ formulario.as_p }}
   <input type="submit" value="Enviar" />

@@ -3,10 +3,10 @@
 {% block subtitulo %}Lista de estudiantes{% endblock subtitulo %}
 
 {% block contenido %}
-<h1>Lista de estudiantes</h1>
-<ul>
-{% for student in estudiantes %}
-  <li>{{ student.apellido }}, {{ student.nombre }}</li>
-{% endfor %}
-</ul>
+<h3>Formulario-Agregar estudiantes</h3>
+<br>
+<form action="{% url 'agregar_estudiantes' %}" method="post">
+  {% csrf_token %}
+  <input type="submit" value="Agregar">
+</form>
 {% endblock contenido %}

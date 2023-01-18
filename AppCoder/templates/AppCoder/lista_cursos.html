@@ -1,23 +1,18 @@
 {% extends "AppCoder/base.html" %}
 
-{% block subtituo %}Lista de cursos{% endblock subtituo %}
+{% block subtituo %}Lista de Cursos{% endblock subtituo %}
 
 {% block contenido %}
-<h1>Lista de cursos</h1>
+<h3>Lista de cursos</h3>
 <a href="{% url 'crear_curso' %}">Añadir</a>
-<br>
+<br><br>
 
 <form action="{% url 'buscar_cursos' %}" method="post">
   {% csrf_token %}
-  <input type="text" name="busqueda">
+  <input type="text" name="nombre">
   <input type="submit" value="Buscar">
 </form>
 <br>
 
-<ul>
-{% for curso in cursos %}
-</ul>
-  <li>{{ curso.nombre }}, {{ curso.comision }} </li>
-{% endfor %}
-</ul>
+
 {% endblock contenido %}
